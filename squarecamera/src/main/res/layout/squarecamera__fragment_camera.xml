@@ -1,0 +1,150 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.desmond.squarecamera.CameraFragment">
+
+    <com.desmond.squarecamera.SquareCameraPreview
+        android:id="@+id/camera_preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"/>
+
+    <View
+        android:id="@+id/cover_top_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/squarecamera__cover_start_height"
+        android:layout_alignTop="@id/camera_preview_view"
+        android:background="@android:color/black"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/cover_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/squarecamera__cover_start_height"
+        android:layout_alignBottom="@id/camera_preview_view"
+        android:background="@android:color/black"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/txt_title_of_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/camera_preview_view"
+        android:text="This is the testing for new activity componets"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/camera_tools_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/open_gallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/capture_image_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/squarecamera__capture_photo_button"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/squarecamera__toggle_flash" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_vertical"
+                android:text="Auto"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/camera_tools_top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/close_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_alignParentLeft="true"
+            android:onClick="onCloseActivity"/>
+
+
+        <LinearLayout
+            android:id="@+id/flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/flash_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/squarecamera__toggle_flash" />
+
+            <TextView
+                android:id="@+id/auto_flash_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_vertical"
+                android:text="Auto"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/change_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/squarecamera__camera"
+            android:layout_toLeftOf="@id/flash"
+            android:layout_centerInParent="true"
+            android:padding="8dp"
+            android:layout_marginRight="16dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

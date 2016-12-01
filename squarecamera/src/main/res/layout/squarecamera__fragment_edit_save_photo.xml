@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.desmond.squarecamera.EditSavePhotoFragment">
+
+    <View
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <com.desmond.squarecamera.SquareImageView
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topView"
+        android:scaleType="centerCrop"/>
+
+    <ImageButton
+        android:id="@+id/save_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/squarecamera__save_photo_drawable"
+        android:background="@android:color/transparent"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/squarecamera__cancel_drawable"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:onClick="onCancel"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/close_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"
+        android:onClick="onCloseActivity"/>
+
+    <Button
+        android:id="@+id/btn_retake_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retake"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_margin="8dp"
+        android:onClick="onCancel"/>
+
+
+    <Button
+        android:id="@+id/btn_use_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use Photo"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/squarecamera__red"
+        android:textColor="@android:color/white"
+        android:layout_margin="8dp" />
+
+</RelativeLayout>
